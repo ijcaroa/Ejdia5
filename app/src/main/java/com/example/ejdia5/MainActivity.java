@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -31,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
     }
     private void tosecondact (String name, String lastName){
         Intent tosecondact = new Intent(MainActivity.this, SecondActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("name", name);
-        bundle.putString("lastName", lastName);
-        startActivity(tosecondact, bundle);
+       // Bundle bundle = new Bundle();
+        Log.d("prueba1", "" + name + " " + lastName);
+        //bundle.putString("name", name);
+        //bundle.putString("lastName", lastName);
+        tosecondact.putExtra("name", name);
+        tosecondact.putExtra("lastName", lastName);
+        startActivity(tosecondact);
 
     }
 

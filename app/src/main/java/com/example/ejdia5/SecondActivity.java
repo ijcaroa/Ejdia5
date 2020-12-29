@@ -2,6 +2,7 @@ package com.example.ejdia5;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -15,11 +16,12 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mBinding = ActivitySecondBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
-        Bundle bundle = getIntent().getExtras();
-        Log.d("prueba",bundle.getString("name"));
-        if (bundle != null){
-            mBinding.textViewname.setText(bundle.getString("name"));
-            mBinding.textViewlastName.setText(bundle.getString("lastName"));
+        Intent intent = getIntent();
+       // Bundle bundle = intent.getExtras();
+        Log.d("prueba",intent.getStringExtra("name"));
+        if (intent != null){
+            mBinding.textViewname.setText(intent.getStringExtra("name"));
+            mBinding.textViewlastName.setText(intent.getStringExtra("lastName"));
 
         }
 
